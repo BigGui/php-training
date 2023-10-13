@@ -328,6 +328,15 @@ function displayStylesList(array $series): void
 // ---------------
 
 /**
+ * Return current page 
+ *
+ * @return string
+ */
+function getCurrentPage(): string
+{
+    return   basename($_SERVER['SCRIPT_NAME']);
+}
+/**
  * Generate HTML link for the given page.
  *
  * @param array $page
@@ -335,7 +344,7 @@ function displayStylesList(array $series): void
  */
 function generatePageLink(array $page): string
 {
-    return '<a href="' . $page['file'] . '" class="main-nav-link' . (basename($_SERVER['SCRIPT_NAME']) === $page['file']  ? ' active' : '') . '">' . $page['name'] . '</a>';
+    return '<a href="' . $page['file'] . '" class="main-nav-link' . (getCurrentPage() === $page['file']  ? ' active' : '') . '">' . $page['name'] . '</a>';
 }
 
 /**
@@ -354,4 +363,32 @@ function generateHtmlNav(array $pages): string
 
     $string = '<nav class="main-nav">' . turnArrayIntoString(array_map('generatePageLink', $pages), 'main-nav-list') . '</nav>';
     return $string;
+}
+/**
+ * Get array from data for current page data
+ *
+ * @param array $pages
+ * @return array
+ */
+function getCurrentPageData(array $pages): ?array
+{
+    // foreach($pages as $page){
+    //     if($page['file'] === getCurrentPage()){
+    //        return $page;
+    //     }
+    // }
+    // return NULL;
+
+    return current(array_filter($pages, fn ($p) => $p['file'] === getCurrentPage()));
+}
+
+/**
+ * Generate style sheet links
+ *
+ * @param array $styleSheetFiles
+ * @return string
+ */
+function generateStyleSheetLinks(array $styleSheetFiles): string
+{
+    return implode('', array_map(fn ($cssFile) => "<link rel=\"stylesheet\" href=\"{$cssFile}\">", $styleSheetFiles));
 }

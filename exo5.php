@@ -2,7 +2,7 @@
 
 include_once 'includes/_config.php';
 require_once 'includes/_functions.php';
-
+include_once  'includes/_head.php';
 // Json file
 try {
     $fileContent = file_get_contents("datas/series.json");
@@ -14,24 +14,6 @@ try {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Introduction PHP - Exo 5</title>
-</head>
-
-<body class="dark-template">
-    <div class="container">
-        <header class="header">
-            <h1 class="main-ttl">Introduction PHP - Exo 5</h1>
-            <?= generateHtmlNav($pages)?>
-        </header>
 
         <section class="exercice">
             Sur cette page un fichier comportant les données de séries télé est importé côté serveur. (voir datas/series.json)
@@ -162,9 +144,6 @@ try {
 
             </div>
         </section>
+<?php
 
-    </div>
-    <div class="copyright">© Guillaume Belleuvre, 2023 - DWWM</div>
-</body>
-
-</html>
+include_once 'includes/_footer.php';

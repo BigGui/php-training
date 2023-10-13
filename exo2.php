@@ -2,27 +2,11 @@
 
 include_once 'includes/_config.php';
 require_once 'includes/_functions.php';
-
+include_once  'includes/_head.php';
 $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas", "kiwi"];
 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global.css">
-    <title>Introduction PHP - Exo 2</title>
-</head>
-
-<body class="dark-template">
-    <div class="container">
-        <header class="header">
-            <h1 class="main-ttl">Introduction PHP - Exo 2</h1>
-            <?= generateHtmlNav($pages)?>
-        </header>
         <!-- QUESTION 1 -->
         <section class="exercice">
             <h2 class="exercice-ttl">Question 1</h2>
@@ -220,8 +204,6 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
                 </ul>
             </div>
         </section>
-    </div>
-    <div class="copyright">© Guillaume Belleuvre, 2023 - DWWM</div>
-</body>
+<?php
 
-</html>
+include_once 'includes/_footer.php';

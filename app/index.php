@@ -101,9 +101,9 @@
             <h2 class="exercice-ttl">Question 4</h2>
             <p class="exercice-txt">Affichez le prix le plus élevé des 3 produits ci-dessus.</p>
             <div class="exercice-sandbox">
-            <?php
+                <?php
                 echo number_format(max($priceProduct1, $priceProduct2, $priceProduct3), 2);
-            ?>
+                ?>
             </div>
         </section>
 
@@ -117,7 +117,13 @@
             <h2 class="exercice-ttl">Question 5</h2>
             <p class="exercice-txt">Affichez dans une liste HTML le nom des produits de la question 2 qui sont présents dans la phrase : "<?= $text1 ?>"</p>
             <div class="exercice-sandbox">
-
+                <ul>
+                    <?php
+                    if (str_contains($text1, $nameProduct1)) echo "<li color:red>$nameProduct1</li>";
+                    if (str_contains($text1, $nameProduct2)) echo "<li>$nameProduct2</li>";
+                    if (str_contains($text1, $nameProduct3)) echo "<li>$nameProduct3</li>";
+                    ?>
+                </ul>
             </div>
         </section>
 

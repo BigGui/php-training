@@ -133,38 +133,38 @@
             <p class="exercice-txt">Parmis les scores suivants, affichez le prénom des joueurs qui ont obtenus entre 50 et 150 points.</p>
             <div class="exercice-sandbox">
                 <ul>
-                   
-                <?php
-                $namePlayer1 = "Tim";
-                $scorePlayer1 = 67;
-                $namePlayer2 = "Morgan";
-                $scorePlayer2 = 198;
-                $namePlayer3 = "Hamed";
-                $scorePlayer3 = 21;
-                $namePlayer4 = "Camille";
-                $scorePlayer4 = 134;
-                $namePlayer5 = "Kevin";
-                $scorePlayer5 = 103;
 
-                $min = 50;
-                $max = 150;
+                    <?php
+                    $namePlayer1 = "Tim";
+                    $scorePlayer1 = 67;
+                    $namePlayer2 = "Morgan";
+                    $scorePlayer2 = 198;
+                    $namePlayer3 = "Hamed";
+                    $scorePlayer3 = 21;
+                    $namePlayer4 = "Camille";
+                    $scorePlayer4 = 134;
+                    $namePlayer5 = "Kevin";
+                    $scorePlayer5 = 103;
 
-                if ($scorePlayer1 >= $min && $scorePlayer1 <= $max) {
-                    echo  "<li>$namePlayer1</li>";
-                }
-                if ($scorePlayer2 >= $min && $scorePlayer2 <= $max) {
-                    echo  "<li>$namePlayer2</li>";
-                }
-                if ($scorePlayer3 >= $min && $scorePlayer3 <= $max) {
-                    echo  "<li>$namePlayer3</li>";
-                }
-                if ($scorePlayer4 >= $min && $scorePlayer4 <= $max) {
-                    echo  "<li>$namePlayer4</li>";
-                }
-                if ($scorePlayer5 >= $min && $scorePlayer5 <= $max) {
-                    echo  "<li>$namePlayer5</li>";
-                }
-                ?>
+                    $min = 50;
+                    $max = 150;
+
+                    if ($scorePlayer1 >= $min && $scorePlayer1 <= $max) {
+                        echo  "<li>$namePlayer1</li>";
+                    }
+                    if ($scorePlayer2 >= $min && $scorePlayer2 <= $max) {
+                        echo  "<li>$namePlayer2</li>";
+                    }
+                    if ($scorePlayer3 >= $min && $scorePlayer3 <= $max) {
+                        echo  "<li>$namePlayer3</li>";
+                    }
+                    if ($scorePlayer4 >= $min && $scorePlayer4 <= $max) {
+                        echo  "<li>$namePlayer4</li>";
+                    }
+                    if ($scorePlayer5 >= $min && $scorePlayer5 <= $max) {
+                        echo  "<li>$namePlayer5</li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </section>
@@ -175,7 +175,49 @@
             <h2 class="exercice-ttl">Question 7</h2>
             <p class="exercice-txt">En réutilisant les scores de la question précédente, afficher le nom du joueur ayant obtenu le plus grand score.</p>
             <div class="exercice-sandbox">
+                <?php
+                switch (max($scorePlayer1, $scorePlayer2, $scorePlayer3, $scorePlayer4, $scorePlayer5)) {
+                    case $scorePlayer1:
+                        echo $namePlayer1;
+                        break;
+                    case $scorePlayer2:
+                        echo $namePlayer2;
+                        break;
+                    case $scorePlayer3:
+                        echo $namePlayer3;
+                        break;
+                    case $scorePlayer4:
+                        echo $namePlayer4;
+                        break;
+                    case $scorePlayer:
+                        echo $namePlayer;
+                        break;
+                }
 
+                if ( !isset($scoreMax) || $scorePlayer1 > $scoreMax) {
+                    $scoreMax = $scorePlayer1;
+                    $winner = $namePlayer1;
+                }
+                if ($scorePlayer2 > $scoreMax) {
+                    $scoreMax = $scorePlayer2;
+                    $winner = $namePlayer2;
+                }
+
+                if ($scorePlayer3 > $scoreMax) {
+                    $scoreMax = $scorePlayer3;
+                    $winner = $namePlayer3;
+                }
+
+                if ($scorePlayer4 > $scoreMax) {
+                    $scoreMax = $scorePlayer4;
+                    $winner = $namePlayer4;
+                }
+                if ($scorePlayer5 > $scoreMax) {
+                    $scoreMax = $scorePlayer5;
+                    $winner = $namePlayer5;
+                }
+                echo $winner;
+                ?>
             </div>
         </section>
 

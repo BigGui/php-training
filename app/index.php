@@ -132,6 +132,8 @@
             <h2 class="exercice-ttl">Question 6</h2>
             <p class="exercice-txt">Parmis les scores suivants, affichez le prénom des joueurs qui ont obtenus entre 50 et 150 points.</p>
             <div class="exercice-sandbox">
+                <ul>
+                   
                 <?php
                 $namePlayer1 = "Tim";
                 $scorePlayer1 = 67;
@@ -143,7 +145,27 @@
                 $scorePlayer4 = 134;
                 $namePlayer5 = "Kevin";
                 $scorePlayer5 = 103;
+
+                $min = 50;
+                $max = 150;
+
+                if ($scorePlayer1 >= $min && $scorePlayer1 <= $max) {
+                    echo  "<li>$namePlayer1</li>";
+                }
+                if ($scorePlayer2 >= $min && $scorePlayer2 <= $max) {
+                    echo  "<li>$namePlayer2</li>";
+                }
+                if ($scorePlayer3 >= $min && $scorePlayer3 <= $max) {
+                    echo  "<li>$namePlayer3</li>";
+                }
+                if ($scorePlayer4 >= $min && $scorePlayer4 <= $max) {
+                    echo  "<li>$namePlayer4</li>";
+                }
+                if ($scorePlayer5 >= $min && $scorePlayer5 <= $max) {
+                    echo  "<li>$namePlayer5</li>";
+                }
                 ?>
+                </ul>
             </div>
         </section>
 

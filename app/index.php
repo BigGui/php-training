@@ -194,7 +194,7 @@
                         break;
                 }
 
-                if ( !isset($scoreMax) || $scorePlayer1 > $scoreMax) {
+                if (!isset($scoreMax) || $scorePlayer1 > $scoreMax) {
                     $scoreMax = $scorePlayer1;
                     $winner = $namePlayer1;
                 }
@@ -227,6 +227,32 @@
             <h2 class="exercice-ttl">Question 8</h2>
             <p class="exercice-txt">Affichez le prénom du joueur le plus long en nombre de caractères.</p>
             <div class="exercice-sandbox">
+                <p>
+                    <?php
+                    $nStrNamePlayer1 = strlen($namePlayer1);
+                    $nStrNamePlayer2 = strlen($namePlayer2);
+                    $nStrNamePlayer3 = strlen($namePlayer3);
+                    $nStrNamePlayer4 = strlen($namePlayer4);
+                    $nStrNamePlayer5 = strlen($namePlayer5);
+                    $maxStr = max($nStrNamePlayer1, $nStrNamePlayer2, $nStrNamePlayer3, $nStrNamePlayer4, $nStrNamePlayer5);
+                    if ($nStrNamePlayer1 === $maxStr) {
+                        echo $namePlayer1;
+                    }
+                    if ($nStrNamePlayer2 === $maxStr) {
+                        echo $namePlayer2;
+                    }
+                    if ($nStrNamePlayer3 === $maxStr) {
+                        echo $namePlayer3;
+                    }
+                    if ($nStrNamePlayer4 === $maxStr) {
+                        echo $namePlayer4;
+                    }
+                    if ($nStrNamePlayer5 === $maxStr) {
+                        echo $namePlayer5;
+                    }
+
+                   ?>
+                </p>
 
             </div>
         </section>

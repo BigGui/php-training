@@ -65,9 +65,17 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
                 <ul>
                     <?php
 
+                    unset($fruits[3]);
+
                     for ($i = 0; $i < count($fruits); $i++) {
                         echo "<li>" . $fruits[$i] ." et sa position " .$i. "</li>";
                     }
+
+                    
+                    foreach ($fruits as $i => $fruit) {
+                        echo "<li>{$i} => " . $fruit . "</li>";
+                    }
+
                     ?>
                 </ul>
 

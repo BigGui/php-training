@@ -118,10 +118,10 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 5</h2>
             <p class="exercice-txt">Afficher un fruit aléatoire du tableau</p>
             <div class="exercice-sandbox">
-                    <?php
-                        /*echo $fruits[random_int(0, sizeof($fruits)-1)];*/
-                        echo $fruits[array_rand($fruits)];
-                    ?>
+                <?php
+                /*echo $fruits[random_int(0, sizeof($fruits)-1)];*/
+                echo $fruits[array_rand($fruits)];
+                ?>
             </div>
         </section>
 
@@ -130,7 +130,14 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 6</h2>
             <p class="exercice-txt">Afficher les fruits dans un ordre aléatoire</p>
             <div class="exercice-sandbox">
-
+                <ul>
+                    <?php
+                    shuffle($fruits);
+                    foreach ($fruits as $fruit) {
+                        echo '<li>' . $fruit . '</li>';
+                    }
+                    ?>
+                </ul>
             </div>
         </section>
 

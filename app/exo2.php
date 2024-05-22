@@ -65,13 +65,13 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
                 <ul>
                     <?php
 
-                    unset($fruits[3]);
+                    // unset($fruits[3]);
 
                     for ($i = 0; $i < count($fruits); $i++) {
-                        echo "<li>" . $fruits[$i] ." et sa position " .$i. "</li>";
+                        echo "<li>" . $fruits[$i] . " et sa position " . $i . "</li>";
                     }
 
-                    
+
                     foreach ($fruits as $i => $fruit) {
                         echo "<li>{$i} => " . $fruit . "</li>";
                     }
@@ -87,6 +87,16 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 4</h2>
             <p class="exercice-txt">Afficher 1 fruit sur 2 dans une liste HTML, en commençant par la fraise</p>
             <div class="exercice-sandbox">
+
+                <ul>
+                    <?php
+                    foreach ($fruits as $i => $fruit) {
+                        if ($i % 2 === 0) {
+                            echo "<li>" . $fruit . "</li>";
+                        }
+                    }
+                    ?>
+                </ul>
 
             </div>
         </section>

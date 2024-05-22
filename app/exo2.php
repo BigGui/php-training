@@ -95,6 +95,18 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
                             echo "<li>" . $fruit . "</li>";
                         }
                     }
+
+                    $display = true;
+                    foreach ($fruits as $fruit) {
+                        if ($display) {
+                            echo "<li>" . $fruit . "</li>";
+                        }
+                        $display = !$display;
+                    }
+
+                    for ($i = 0; $i < count($fruits); $i += 2) {
+                        echo "<li>" . $fruits[$i] . "</li>";
+                    }
                     ?>
                 </ul>
 

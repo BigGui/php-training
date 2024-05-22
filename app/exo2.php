@@ -118,7 +118,10 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 5</h2>
             <p class="exercice-txt">Afficher un fruit aléatoire du tableau</p>
             <div class="exercice-sandbox">
-
+                    <?php
+                        /*echo $fruits[random_int(0, sizeof($fruits)-1)];*/
+                        echo $fruits[array_rand($fruits)];
+                    ?>
             </div>
         </section>
 

@@ -197,7 +197,7 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 9</h2>
             <p class="exercice-txt">Affichez la chaîne de caractère composée de l'ensemble des fruits de la liste, séparés par une virgule et un espace.</p>
             <div class="exercice-sandbox">
-                   <p> <?php
+                <p> <?php
                     // foreach($fruits as $i => $fruit){
                     //     if($i === 0) echo ucfirst($fruit) . ', ';
                     //     else if ($i === count($fruits) -1) echo $fruit . '.';
@@ -218,7 +218,22 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 10</h2>
             <p class="exercice-txt">Afficher dans une liste HTML tous les fruits de la liste qui apparaissent dans la phrase suivante : "<?= $salad ?>"</p>
             <div class="exercice-sandbox">
+                <ul>
+                    <?php
+                    // foreach ($fruits as $fruit) {
+                    //     if (stripos($salad, $fruit) !== false) {
+                    //         echo "<li>{$fruit}</li>";
+                    //     }
+                    // }
 
+                    foreach ($fruits as $fruit) {
+                        if (str_contains($salad, $fruit)) {
+                            echo "<li>{$fruit}</li>";
+                        }
+                    }
+
+                    ?>
+                </ul>
             </div>
         </section>
     </div>

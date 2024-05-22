@@ -138,16 +138,16 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
                         echo "<li>{$fruit}</li>";
                     }
 
-                    
-                    $randomFruits = [];
 
-                    while (count($fruits) > 0) {
-                        $index = array_rand($fruits);
-                        $randomFruits[] = $fruits[$index];
-                        unset($fruits[$index]);
-                    }
+                    // $randomFruits = [];
 
-                    var_dump($randomFruits);
+                    // while (count($fruits) > 0) {
+                    //     $index = array_rand($fruits);
+                    //     $randomFruits[] = $fruits[$index];
+                    //     unset($fruits[$index]);
+                    // }
+
+                    // var_dump($randomFruits);
 
                     ?>
                 </ul>
@@ -159,7 +159,15 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 7</h2>
             <p class="exercice-txt">Afficher les fruits dont la chaîne de caractère est composée de 5 caractères au maximum</p>
             <div class="exercice-sandbox">
-
+                <ul>
+                    <?php
+                    foreach ($fruits as $fruit) {
+                        if (mb_strlen($fruit) <= 5) {
+                            echo "<li>{$fruit}</li>";
+                        }
+                    }
+                    ?>
+                </ul>
             </div>
         </section>
 

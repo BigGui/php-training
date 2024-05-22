@@ -307,6 +307,35 @@
                 ];
 
                 var_dump($players);
+
+                $players2 = [
+                    $namePlayer1 => [
+                        'age' => $agePlayer1,
+                        'score' => $scorePlayer1
+                    ],
+                    $namePlayer2 => [
+                        'age' => $agePlayer2,
+                        'score' => $scorePlayer2
+                    ],
+                    $namePlayer3 => [
+                        'age' => $agePlayer3,
+                        'score' => $scorePlayer3
+                    ],
+                    $namePlayer4 => [
+                        'age' => $agePlayer4,
+                        'score' => $scorePlayer4
+                    ],
+                    $namePlayer5 => [
+                        'age' => $agePlayer5,
+                        'score' => $scorePlayer5
+                    ]
+                ];
+
+                var_dump($players2);
+
+                var_dump($players[2]['score']);
+
+                var_dump($players2['Hamed']['score']);
                 ?>
 
             </div>

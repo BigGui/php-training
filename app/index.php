@@ -251,7 +251,7 @@
                         echo $namePlayer5;
                     }
 
-                   ?>
+                    ?>
                 </p>
 
             </div>
@@ -270,6 +270,44 @@
             </ul>
             <p class="exercice-txt">Afficher la valeur de cette variable avec tous les détails.</p>
             <div class="exercice-sandbox">
+
+                <?php
+                $agePlayer1 = 25;
+                $agePlayer2 = 34;
+                $agePlayer3 = 27;
+                $agePlayer4 = 47;
+                $agePlayer5 = 31;
+
+                $players = [
+                    [
+                        'name' => $namePlayer1,
+                        'age' => $agePlayer1,
+                        'score' => $scorePlayer1
+                    ],
+                    [
+                        'name' => $namePlayer2,
+                        'age' => $agePlayer2,
+                        'score' => $scorePlayer2
+                    ],
+                    [
+                        'name' => $namePlayer3,
+                        'age' => $agePlayer3,
+                        'score' => $scorePlayer3
+                    ],
+                    [
+                        'name' => $namePlayer4,
+                        'age' => $agePlayer4,
+                        'score' => $scorePlayer4
+                    ],
+                    [
+                        'name' => $namePlayer5,
+                        'age' => $agePlayer5,
+                        'score' => $scorePlayer5
+                    ]
+                ];
+
+                var_dump($players);
+                ?>
 
             </div>
         </section>

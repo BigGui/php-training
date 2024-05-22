@@ -134,8 +134,21 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
                     <?php
                     shuffle($fruits);
                     foreach ($fruits as $fruit) {
-                        echo '<li>' . $fruit . '</li>';
+                        // echo '<li>' . $fruit . '</li>';
+                        echo "<li>{$fruit}</li>";
                     }
+
+                    
+                    $randomFruits = [];
+
+                    while (count($fruits) > 0) {
+                        $index = array_rand($fruits);
+                        $randomFruits[] = $fruits[$index];
+                        unset($fruits[$index]);
+                    }
+
+                    var_dump($randomFruits);
+
                     ?>
                 </ul>
             </div>

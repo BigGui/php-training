@@ -63,7 +63,16 @@ try {
             <p class="exercice-txt">Afficher la liste de toutes les séries avec l'image principale et son titre</p>
             <p class="exercice-txt">Afficher une seule série par ligne sur les plus petits écrans, 2 séries par ligne sur les écrans intermédiaires et 4 séries par ligne sur un écran d'ordinateur.</p>
             <div class="exercice-sandbox">
-
+                <ul class="series">
+                    <?php
+                    foreach ($series as $show) {
+                        echo '<li class="series__itm">'
+                            . '<h3 class="series__ttl">' . $show['name'] . '</h3>'
+                            . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'
+                            . '</li>';
+                    }
+                    ?>
+                </ul>
             </div>
         </section>
 

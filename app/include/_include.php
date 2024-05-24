@@ -131,9 +131,21 @@ function getIntersection(array $array, array $arrayA): array
     return $result;
 }
 
-function getArrayDiff(array $array1, array $array2): array
+/**
+ * Get values from the first array different from second array
+ *
+ * @param array $array1 the array you want the values from
+ * @param array $array2 the array to compare
+ * @param boolean $unique - if true, removes duplicates
+ * @return array Array containing first array values that are different from the second one.
+ */
+function getArrayDiff(array $array1, array $array2, bool $unique = false): array
 {
     // return array_diff($array1, $array2);
 
-    return array_filter($array1, fn($v) => !in_array($v, $array2));
+    $newArray = array_filter($array1, fn($v) => !in_array($v, $array2));
+
+    if ($unique) return excludeDuplicates($newArray);
+
+    return $newArray;
 }

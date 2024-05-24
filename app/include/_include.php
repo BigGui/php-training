@@ -71,3 +71,21 @@ function doubleArrayValues(array $array): array
     }
     return $arrayResult;
 }
+
+/**
+ * Get array values and divide by divider
+ *
+ * @param array $array the array you want to divide values from
+ * @param int $divider the divider
+ * @return array new array with divided values
+ */
+function divideArrayValues(array $array, int $divider = 2): array
+{
+    $arrayResult = [];
+    foreach ($array as $value) {
+        if (is_int($value)) {
+            $arrayResult[] = $value / $divider;
+        }
+    }
+    return $arrayResult;
+}

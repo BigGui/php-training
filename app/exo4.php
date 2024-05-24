@@ -51,6 +51,7 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <div class="exercice-sandbox">
                 <?php
                 echo getArrayAsHTMLList(getEvenValues($array));
+                echo getArrayAsHTMLList(getEvenValues($arrayB));
                 ?>
             </div>
         </section>

@@ -23,11 +23,12 @@ function getArrayAsHTMLList(array $array): string
  */
 function getEvenValues(array $intArray): array
 {
-    $intlist = [];
-    foreach ($intArray as $value) {
-        if ($value % 2 === 0) {
-            $intList[] = $value;
-        }
-    }
-    return $intList;
+    // foreach ($intArray as $value) {
+    //     if (is_int($value) && $value % 2 === 0) {
+    //         $intList[] = $value;
+    //     }
+    // }
+    // return $intList;
+
+    return array_filter($intArray, fn ($v) => is_int($v) && $v % 2 === 0);
 }

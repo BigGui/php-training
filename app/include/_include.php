@@ -143,9 +143,35 @@ function getArrayDiff(array $array1, array $array2, bool $unique = false): array
 {
     // return array_diff($array1, $array2);
 
-    $newArray = array_filter($array1, fn($v) => !in_array($v, $array2));
+    $newArray = array_filter($array1, fn ($v) => !in_array($v, $array2));
 
     if ($unique) return excludeDuplicates($newArray);
+
+    return $newArray;
+}
+
+
+/**
+ * Get the first $nb values from the given array.
+ *
+ * @param array $array the array
+ * @param integer $nb the number of values to extract
+ * @return array an array with $nb values. Or the given array if $nb is bigger than the array length. 
+ */
+function getFirstElements(array $array, int $nb): array
+{
+    // return array_slice($array, 0, $nb, true);
+
+    $newArray = [];
+    // foreach ($array as $key => $value) {
+    //     if (count($newArray) >= $nb) break;
+        
+    //     $newArray[$key] = $value;
+    // }
+
+    while (count($newArray) < $nb && count($array) > 0) {
+        $newArray[] = array_shift($array);
+    }
 
     return $newArray;
 }

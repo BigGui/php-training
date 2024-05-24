@@ -62,10 +62,10 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et retourne uniquement les entiers d'index pair</p>
             <div class="exercice-sandbox">
                 <?php
-                    var_dump(getValueEvenIndex($array));
-                    var_dump(getValueEvenIndex($arrayA));
-                    var_dump(getValueEvenIndex($arrayB));
-            
+                var_dump(getValueEvenIndex($array));
+                var_dump(getValueEvenIndex($arrayA));
+                var_dump(getValueEvenIndex($arrayB));
+
                 ?>
             </div>
         </section>
@@ -75,7 +75,9 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 4</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers. La fonction doit retourner les valeurs du tableau mulipliées par 2.</p>
             <div class="exercice-sandbox">
-
+                <?php
+                var_dump(doubleArrayValues($arrayA));
+                ?>
             </div>
         </section>
 

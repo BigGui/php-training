@@ -54,3 +54,20 @@ function getValueEvenIndex(array $array): array
         ARRAY_FILTER_USE_BOTH
     );
 }
+
+/**
+ * Get array values and multiply by 2
+ *
+ * @param array $array the array you want to double values from
+ * @return array new array with doubled values
+ */
+function doubleArrayValues(array $array): array
+{
+    $arrayResult = [];
+    foreach ($array as $value) {
+        if (is_int($value)) {
+            $arrayResult[] = $value * 2;
+        }
+    }
+    return $arrayResult;
+}

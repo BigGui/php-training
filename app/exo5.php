@@ -1,5 +1,5 @@
 <?php
-
+include "./include/_include.php";
 // Json file
 try {
     $fileContent = file_get_contents("datas/series.json");
@@ -49,7 +49,11 @@ try {
             <h2 class="exercice-ttl">Question 1</h2>
             <p class="exercice-txt">Récupérer dans un tableau puis afficher l'ensemble des plateformes de diffusion des séries. Afficher les par ordre alphabétique.</p>
             <div class="exercice-sandbox">
-                
+
+                <?php
+                var_dump(getPlatformsFromSeries($series));
+                ?>
+
             </div>
         </section>
 
@@ -79,7 +83,7 @@ try {
             <p class="exercice-txt">Si l'URL de la page appelée comporte l'identifiant d'une série, alors afficher toutes les informations de la série ci-dessous.</p>
             <p class="exercice-txt">Si l'identifiant ne correspond à aucune série, afficher un message d'erreur.</p>
             <div class="exercice-sandbox">
-                
+
             </div>
         </section>
 
@@ -88,7 +92,7 @@ try {
             <h2 class="exercice-ttl">Question 5</h2>
             <p class="exercice-txt">Récupérer dans un tableau l'ensemble des styles de séries dans une liste HTML. Afficher les par ordre alphabétique dans une liste HTML.</p>
             <div class="exercice-sandbox">
-                
+
             </div>
         </section>
 
@@ -97,7 +101,7 @@ try {
             <h2 class="exercice-ttl">Question 6</h2>
             <p class="exercice-txt">Ajoutez après chaque style de la liste ci-dessus, le nombre de séries correspondantes entre parenthèses.</p>
             <div class="exercice-sandbox">
-                
+
             </div>
         </section>
 

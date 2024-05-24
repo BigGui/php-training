@@ -175,3 +175,24 @@ function getFirstElements(array $array, int $nb): array
 
     return $newArray;
 }
+
+/**
+ * get the platform from the series data.
+ *
+ * @param array $seriesData the array entry
+ * @return array the list of platform
+ */
+function getPlatformsFromSeries(array $seriesData): array
+{
+    $platforms = [];
+
+    foreach ($seriesData as $show) {
+        $platforms[] = $show["availableOn"];
+    }
+
+    $platforms = excludeDuplicates($platforms);
+    sort($platforms);
+
+    return $platforms;
+}
+

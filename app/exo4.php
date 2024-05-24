@@ -38,7 +38,23 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 1</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau et retourne la chaîne de caractère HTML permettant d'afficher les valeurs du tableau sous la forme d'une liste.</p>
             <div class="exercice-sandbox">
-
+                <?php
+                /**
+                 * Get from an array a HTML list string
+                 * @param array $array your array you want in HTML list
+                 * @return string the HTML list
+                 */
+                    function getArrayAsHTMLList (array $array):string
+                    {
+                        // $values = '';
+                        // foreach($array as $value){
+                        //     $values .= "<li>{$value}</li>";
+                        // }
+                    
+                        return '<ul>' . implode(array_map(fn ($value) => "<li>{$value}</li>", $array)) . '</ul>';
+                    }
+                    echo getArrayAsHTMLList($array);
+                ?>
             </div>
         </section>
 

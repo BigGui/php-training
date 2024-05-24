@@ -5,14 +5,14 @@
  * @param array $array your array you want in HTML list
  * @return string the HTML list
  */
-function getArrayAsHTMLList(array $array): string
+function getArrayAsHTMLList(array $array, string $ulClass = '', string $liClass = ''): string
 {
     // $values = '';
     // foreach($array as $value){
     //     $values .= "<li>{$value}</li>";
     // }
 
-    return '<ul>' . implode(array_map(fn ($v) => "<li>{$v}</li>", $array)) . '</ul>';
+    return '<ul class="' . $ulClass . '">' . implode(array_map(fn ($v) => '<li class="' . $liClass . '">' . $v . '</li>', $array)) . '</ul>';
 }
 
 /**
@@ -165,7 +165,7 @@ function getFirstElements(array $array, int $nb): array
     $newArray = [];
     // foreach ($array as $key => $value) {
     //     if (count($newArray) >= $nb) break;
-        
+
     //     $newArray[$key] = $value;
     // }
 
@@ -175,6 +175,11 @@ function getFirstElements(array $array, int $nb): array
 
     return $newArray;
 }
+
+
+// --------------
+// SERIES
+// --------------
 
 /**
  * get the platform from the series data.
@@ -196,3 +201,17 @@ function getPlatformsFromSeries(array $seriesData): array
     return $platforms;
 }
 
+
+
+
+
+function generateShow(array $show): string
+{
+    return '<h3 class="series__ttl">' . $show['name'] . '</h3>'
+        . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">';
+}
+
+
+function generateSeries(array $series) :string {
+    return getArrayAsHTMLList(array_map("generateShow", $series), 'series', 'series__itm');
+}

@@ -65,12 +65,8 @@ try {
             <div class="exercice-sandbox">
                 <ul class="series">
                     <?php
-                    foreach ($series as $show) {
-                        echo '<li class="series__itm">'
-                            . '<h3 class="series__ttl">' . $show['name'] . '</h3>'
-                            . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'
-                            . '</li>';
-                    }
+                    echo generateSeries($series);
+
                     ?>
                 </ul>
             </div>

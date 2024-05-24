@@ -94,3 +94,20 @@ function divideArrayValues(array $array, int $divider = 2): array
         array_filter($array, fn($v) => is_int($v))
     );
 }
+
+/**
+ * Excludes duplicates of an array
+ *
+ * @param array $array - array of integers or strings
+ * @return array - array without duplicates
+ */
+function excludeDuplicates(array $array) :array {
+    // return array_unique($array, SORT_REGULAR);
+    $result = [];
+    foreach ($array as $key => $value) {
+        if (!in_array($value, $result)) {
+            $result[$key] = $value;
+        }
+    }
+    return $result;
+}

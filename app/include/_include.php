@@ -130,3 +130,10 @@ function getIntersection(array $array, array $arrayA): array
     }
     return $result;
 }
+
+function getArrayDiff(array $array1, array $array2): array
+{
+    // return array_diff($array1, $array2);
+
+    return array_filter($array1, fn($v) => !in_array($v, $array2));
+}

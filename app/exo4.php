@@ -63,7 +63,26 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 2</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et retourne uniquement les valeurs paires. Afficher les valeurs du tableau sous la forme d'une liste HTML.</p>
             <div class="exercice-sandbox">
+                <?php
+                /**
+                 * Get even values from an array.
+                 *
+                 * @param array $intArray The array you want the even values from.
+                 * @return array A new array only containing even values.
+                 */
+                function getEvenValues(array $intArray): array
+                {
+                    $intlist = [];
+                    foreach ($intArray as $value) {
+                        if ($value % 2 === 0) {
+                            $intList[] = $value;
+                        }
+                    }
+                    return $intList;
+                }
 
+                echo getArrayAsHTMLList(getEvenValues($array));
+                ?>
             </div>
         </section>
 

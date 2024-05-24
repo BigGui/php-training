@@ -1,5 +1,5 @@
 <?php
-
+include "./include/_include.php";
 $array = [12, 65, 95, 41, 85, 63, 71, 64];
 
 $arrayA = [12, "le", 95, 12, 85, "le", 71, "toi", 95, "la"];
@@ -39,20 +39,6 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau et retourne la chaîne de caractère HTML permettant d'afficher les valeurs du tableau sous la forme d'une liste.</p>
             <div class="exercice-sandbox">
                 <?php
-                /**
-                 * Get from an array a HTML list string
-                 * @param array $array your array you want in HTML list
-                 * @return string the HTML list
-                 */
-                function getArrayAsHTMLList(array $array): string
-                {
-                    // $values = '';
-                    // foreach($array as $value){
-                    //     $values .= "<li>{$value}</li>";
-                    // }
-
-                    return '<ul>' . implode(array_map(fn ($v) => "<li>{$v}</li>", $array)) . '</ul>';
-                }
                 echo getArrayAsHTMLList($array);
                 ?>
             </div>
@@ -64,23 +50,6 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et retourne uniquement les valeurs paires. Afficher les valeurs du tableau sous la forme d'une liste HTML.</p>
             <div class="exercice-sandbox">
                 <?php
-                /**
-                 * Get even values from an array.
-                 *
-                 * @param array $intArray The array you want the even values from.
-                 * @return array A new array only containing even values.
-                 */
-                function getEvenValues(array $intArray): array
-                {
-                    $intlist = [];
-                    foreach ($intArray as $value) {
-                        if ($value % 2 === 0) {
-                            $intList[] = $value;
-                        }
-                    }
-                    return $intList;
-                }
-
                 echo getArrayAsHTMLList(getEvenValues($array));
                 ?>
             </div>

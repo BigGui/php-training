@@ -90,8 +90,8 @@ function divideArrayValues(array $array, int $divider = 2): array
     // return $arrayResult;
 
     return array_map(
-        fn($v) => $v / $divider,
-        array_filter($array, fn($v) => is_int($v))
+        fn ($v) => $v / $divider,
+        array_filter($array, fn ($v) => is_int($v))
     );
 }
 
@@ -101,11 +101,30 @@ function divideArrayValues(array $array, int $divider = 2): array
  * @param array $array - array of integers or strings
  * @return array - array without duplicates
  */
-function excludeDuplicates(array $array) :array {
+function excludeDuplicates(array $array): array
+{
     // return array_unique($array, SORT_REGULAR);
     $result = [];
     foreach ($array as $key => $value) {
         if (!in_array($value, $result)) {
+            $result[$key] = $value;
+        }
+    }
+    return $result;
+}
+
+/**
+ * get intersection between two arrays.
+ * @param array $array an array.
+ * @param array $arrayA an array.
+ * @return array the intersection array.
+ */
+function getIntersection(array $array, array $arrayA): array
+{
+    // return array_intersect($array, $arrayA);
+    $result = [];
+    foreach ($array as $key => $value) {
+        if (in_array($value, $arrayA)) {
             $result[$key] = $value;
         }
     }

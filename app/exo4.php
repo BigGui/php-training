@@ -87,7 +87,7 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et un entier. La fonction doit retourner les valeurs du tableau divisées par le second paramètre</p>
             <div class="exercice-sandbox">
                 <?php
-                echo getArrayAsHTMLList(divideArrayValues($array, 2));
+                echo getArrayAsHTMLList(divideArrayValues($arrayA, 2));
                 ?>
             </div>
         </section>

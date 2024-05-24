@@ -81,11 +81,16 @@ function doubleArrayValues(array $array): array
  */
 function divideArrayValues(array $array, int $divider = 2): array
 {
-    $arrayResult = [];
-    foreach ($array as $value) {
-        if (is_int($value)) {
-            $arrayResult[] = $value / $divider;
-        }
-    }
-    return $arrayResult;
+    // $arrayResult = [];
+    // foreach ($array as $value) {
+    //     if (is_int($value)) {
+    //         $arrayResult[] = $value / $divider;
+    //     }
+    // }
+    // return $arrayResult;
+
+    return array_map(
+        fn($v) => $v / $divider,
+        array_filter($array, fn($v) => is_int($v))
+    );
 }

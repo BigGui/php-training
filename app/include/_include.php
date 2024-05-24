@@ -32,3 +32,25 @@ function getEvenValues(array $intArray): array
 
     return array_filter($intArray, fn ($v) => is_int($v) && $v % 2 === 0);
 }
+
+/**
+ * Get values with even index from array
+ *
+ * @param array $array The array you want the values from.
+ * @return array A new array only containing even index.
+ */
+function getValueEvenIndex(array $array): array
+{
+    // $valuesInt = [];
+    // foreach ($array as $key => $value) {
+    //     if(is_int($key) && $key % 2 === 0 && is_int($value)) {
+    //         $valuesInt[$key] = $value;
+    //     }
+    // }
+    // return $valuesInt;
+    return array_filter(
+        $array,
+        fn ($v, $k) => is_int($k) && $k % 2 === 0 && is_int($v),
+        ARRAY_FILTER_USE_BOTH
+    );
+}

@@ -2,7 +2,7 @@
 include "./include/_include.php";
 $array = [12, 65, 95, 41, 85, 63, 71, 64];
 
-$arrayA = [12, "le", 95, 12, 85, "le", 71, "toi", 95, "la"];
+$arrayA = [12, "le", 95, 12, 85, "le", 71, "toi", 95, "la", "patate"];
 $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
 
 ?>
@@ -61,7 +61,12 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 3</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et retourne uniquement les entiers d'index pair</p>
             <div class="exercice-sandbox">
-
+                <?php
+                    var_dump(getValueEvenIndex($array));
+                    var_dump(getValueEvenIndex($arrayA));
+                    var_dump(getValueEvenIndex($arrayB));
+            
+                ?>
             </div>
         </section>
 

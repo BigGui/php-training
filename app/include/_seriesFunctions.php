@@ -124,11 +124,16 @@ function generateSelectedShow(array $series): string
 }
 
 /**
- * Get the list of all styles in the given array
+ * Get the list of all styles and count them in the given array
+ * [
+ *    "style" => 6,
+ *    "style" => 2,
+ *    "style" => 3
+ * ]
  * @param array $series The array with all series data
  * @return array All the styles in alphabetic order
  */
-function getStylesList(array $series): array
+function countStyles(array $series): array
 {
     // $styles = [];
     // foreach ($series as $show) {
@@ -136,7 +141,41 @@ function getStylesList(array $series): array
     //     $styles = array_merge($styles, $show['styles']);
     // }
     $styles = array_merge(...array_column($series, 'styles'));
-    $styles = excludeDuplicates($styles);
-    sort($styles);
+    // $styles = excludeDuplicates($styles);
+    $styles = array_count_values($styles);
+    ksort($styles);
     return $styles;
+}
+
+
+/**
+ * Get style label to display
+ *
+ * @param string $style Style name
+ * @param integer $nb Number of series
+ * @return string label to display the style
+ */
+function generateStyleLabel(string $style, int $nb): string {
+    return "{$style} ({$nb})";
+}
+
+
+/**
+ * Generate HTML code to display styles list from given series. 
+ *
+ * @param array $series The array with all series data.
+ * @return string HTML code to display styles list.
+ */
+function generateStylesList(array $series): string {
+    
+    $styles = countStyles($series);
+
+    // $newArray = [];
+    // foreach ($styles as $style => $nb) {
+    //     $newArray[] = "{$style} ({$nb})";
+    // }
+
+    $newArray = array_map("generateStyleLabel", array_keys($styles), array_values($styles));
+
+    return getArrayAsHTMLList($newArray);
 }

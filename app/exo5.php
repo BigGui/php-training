@@ -57,7 +57,24 @@ try {
         <section class="exercice">
             <h2 class="exercice-ttl">Les séries</h2>
             <div class="exercice-sandbox">
-                <?= generateSeries($series) ?>
+                <?php
+
+                if (isset($_GET['style'])) {
+                    // $filteredSeries = [];
+                    // foreach ($series as $show) {
+                    //     if(in_array($_GET['style'], $show['styles'])) {
+                    //         $filteredSeries[] = $show;
+                    //     }
+                    // }
+                    $filteredSeries = array_filter($series, fn($s) => in_array($_GET['style'], $s['styles']));
+                }
+                else {
+                    $filteredSeries = $series;
+                }
+                
+                echo generateSeries($filteredSeries);
+                
+                ?>
             </div>
         </section>
 

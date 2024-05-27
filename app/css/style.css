@@ -61,6 +61,17 @@
     grid-area: d;
 }
 
+
+.styles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.styles__itm {
+    list-style: none;
+
+}
+
 /* Errors and warning notifictions */
 
 .warning,

@@ -46,87 +46,24 @@ try {
             Les données sont accessibles dans la variable $series.
         </section>
 
-        <!-- QUESTION 1 -->
         <section class="exercice">
-            <h2 class="exercice-ttl">Question 1</h2>
-            <p class="exercice-txt">Récupérer dans un tableau puis afficher l'ensemble des plateformes de diffusion des séries. Afficher les par ordre alphabétique.</p>
             <div class="exercice-sandbox">
-
-                <?php
-                var_dump(getPlatformsFromSeries($series));
-                ?>
-
+                <nav>
+                    <?= generateStylesList($series) ?>
+                </nav>
             </div>
         </section>
 
-        <!-- QUESTION 2 -->
         <section class="exercice">
-            <h2 class="exercice-ttl">Question 2</h2>
-            <p class="exercice-txt">Afficher la liste de toutes les séries avec l'image principale et son titre</p>
-            <p class="exercice-txt">Afficher une seule série par ligne sur les plus petits écrans, 2 séries par ligne sur les écrans intermédiaires et 4 séries par ligne sur un écran d'ordinateur.</p>
+            <h2 class="exercice-ttl">Les séries</h2>
             <div class="exercice-sandbox">
-                <?php
-                echo generateSeries($series);
-
-                ?>
+                <?= generateSeries($series) ?>
             </div>
         </section>
 
-        <!-- QUESTION 3 -->
-        <section class="exercice">
-            <h2 class="exercice-ttl">Question 3</h2>
-            <p class="exercice-txt">Ajouter un lien aux séries listées ci-dessus menant à cette page avec en paramètre "serie", l'identifiant de la série</p>
-            <div class="exercice-sandbox">
-                <?php
-
-                ?>
-            </div>
-        </section>
-
-
-        <!-- QUESTION 4 -->
         <section id="question4" class="exercice">
-            <h2 class="exercice-ttl">Question 4</h2>
-            <p class="exercice-txt">Si l'URL de la page appelée comporte l'identifiant d'une série, alors afficher toutes les informations de la série ci-dessous.</p>
-            <p class="exercice-txt">Si l'identifiant ne correspond à aucune série, afficher un message d'erreur.</p>
             <div class="exercice-sandbox">
                 <?= generateSelectedShow($series) ?>
-            </div>
-        </section>
-
-        <!-- QUESTION 5 -->
-        <section class="exercice">
-            <h2 class="exercice-ttl">Question 5</h2>
-            <p class="exercice-txt">Récupérer dans un tableau l'ensemble des styles de séries dans une liste HTML. Afficher les par ordre alphabétique dans une liste HTML.</p>
-            <div class="exercice-sandbox">
-                <?= generateStylesList($series) ?>
-            </div>
-        </section>
-
-        <!-- QUESTION 6 -->
-        <section class="exercice">
-            <h2 class="exercice-ttl">Question 6</h2>
-            <p class="exercice-txt">Ajoutez après chaque style de la liste ci-dessus, le nombre de séries correspondantes entre parenthèses.</p>
-            <div class="exercice-sandbox">
-
-            </div>
-        </section>
-
-        <!-- QUESTION 7 -->
-        <section class="exercice">
-            <h2 class="exercice-ttl">Question 7</h2>
-            <p class="exercice-txt">Ajoutez un lien à chaque nom de style ci-dessus menant à cette page avec en paramètre "style" le nom du style.</p>
-            <div class="exercice-sandbox">
-
-            </div>
-        </section>
-
-        <!-- QUESTION 8 -->
-        <section class="exercice">
-            <h2 class="exercice-ttl">Question 8</h2>
-            <p class="exercice-txt">Si l'URL de la page appelée comporte un style, affichez à la Question 2 uniquement les séries de ce style.</p>
-            <div class="exercice-sandbox">
-
             </div>
         </section>
 

@@ -179,5 +179,5 @@ function generateStylesList(array $series): string
 
     $newArray = array_map("generateStyleLink", array_keys($styles), array_values($styles));
 
-    return getArrayAsHTMLList($newArray);
+    return getArrayAsHTMLList($newArray, 'styles', 'styles__itm');
 }

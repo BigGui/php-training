@@ -53,7 +53,7 @@ function generateShow(array $show, bool $full = false): string
             . '</div>';
     }
 
-    return '<a href="exo5.php?serie=' . $show['id'] . '#question4">'
+    return '<a href="?serie=' . $show['id'] . '#question4">'
         . '<h3 class="series__ttl">' . $show['name'] . '</h3>'
         . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'
         . '</a>';
@@ -155,8 +155,9 @@ function countStyles(array $series): array
  * @param integer $nb Number of series
  * @return string label to display the style
  */
-function generateStyleLabel(string $style, int $nb): string {
-    return "{$style} ({$nb})";
+function generateStyleLink(string $style, int $nb): string
+{
+    return '<a href="?style=' . urlencode($style) . '">' . $style . ' (' . $nb . ')</a>';
 }
 
 
@@ -166,8 +167,9 @@ function generateStyleLabel(string $style, int $nb): string {
  * @param array $series The array with all series data.
  * @return string HTML code to display styles list.
  */
-function generateStylesList(array $series): string {
-    
+function generateStylesList(array $series): string
+{
+
     $styles = countStyles($series);
 
     // $newArray = [];
@@ -175,7 +177,7 @@ function generateStylesList(array $series): string {
     //     $newArray[] = "{$style} ({$nb})";
     // }
 
-    $newArray = array_map("generateStyleLabel", array_keys($styles), array_values($styles));
+    $newArray = array_map("generateStyleLink", array_keys($styles), array_values($styles));
 
     return getArrayAsHTMLList($newArray);
 }

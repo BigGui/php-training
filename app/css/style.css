@@ -17,7 +17,7 @@
     width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
     .series {
         grid-template-columns: 1fr 1fr;
     }

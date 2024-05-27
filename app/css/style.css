@@ -69,7 +69,20 @@
 }
 .styles__itm {
     list-style: none;
+}
 
+.styles__lnk {
+    display: block;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    background-color: var(--bg-blue);
+    color: #fff;
+    transition: background 200ms ease-in-out;
+}
+
+.styles__lnk:hover,
+.styles__lnk--active {
+    background-color: var(--bg-color);
 }
 
 /* Errors and warning notifictions */

@@ -157,7 +157,7 @@ function countStyles(array $series): array
  */
 function generateStyleLink(string $style, int $nb): string
 {
-    return '<a href="?style=' . urlencode($style) . '">' . $style . ' (' . $nb . ')</a>';
+    return '<a class="styles__lnk" href="?style=' . urlencode($style) . '">' . $style . ' (' . $nb . ')</a>';
 }
 
 

@@ -184,7 +184,8 @@ function getFirstElements(array $array, int $nb): array
 }
 
 
-function getCurrentURL(): string  {
+function getCurrentURL(): string
+{
     return basename($_SERVER['SCRIPT_NAME']);
 }
 
@@ -201,4 +202,19 @@ function generateMainNav(array $pages): string
         array_map("generateNavLink", $pages),
         'main-nav-list'
     );
+}
+
+function getCurrentPageDetails(array $pages): ?array
+{
+    foreach ($pages as $page) {
+        if ($page['url'] === getCurrentURL()) {
+            return $page;
+        }
+    }
+
+    return null;
+}
+
+function linkCssFiles(array $cssFiles): string {
+    return implode(array_map(fn($f) => '<link rel="stylesheet" href="'.$f.'">', $cssFiles));
 }

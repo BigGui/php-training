@@ -14,28 +14,10 @@ try {
     exit;
 }
 
+$currentPage = getCurrentPageDetails($pages);
+include 'include/_header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Introduction PHP - Exo 5</title>
-</head>
-
-<body class="dark-template">
-    <div class="container">
-        <header class="header">
-            <h1 class="main-ttl">Introduction PHP - Exo 5</h1>
-            <nav class="main-nav">
-                <?= generateMainNav($pages)?>
-            </nav>
-        </header>
 
         <section class="exercice">
             Sur cette page un fichier comportant les données de séries télé est importé côté serveur. (voir datas/series.json)
@@ -79,9 +61,7 @@ try {
                 <?= generateSelectedShow($series) ?>
             </div>
         </section>
+<?php
+include 'include/_footer.php';
 
-    </div>
-    <div class="copyright">© Guillaume Belleuvre, 2023 - DWWM</div>
-</body>
-
-</html>
+?>

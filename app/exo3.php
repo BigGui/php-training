@@ -2,30 +2,18 @@
 include 'include/_functions.php';
 include 'include/_config.php';
 
+
+$currentPage = getCurrentPageDetails($pages);
+include 'include/_header.php';
+
+
 $fruits = ["fraise", "banane", "pomme", "cerise", "ananas"];
 
 $prices = [3, 2, 2, 5, 8];
 
+
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global.css">
-    <title>Introduction PHP - Exo 3</title>
-</head>
-
-<body class="dark-template">
-    <div class="container">
-        <header class="header">
-            <h1 class="main-ttl">Introduction PHP - Exo 3</h1>
-            <nav class="main-nav">
-                <?= generateMainNav($pages)?>
-            </nav>
-        </header>
 
 
         <!-- QUESTION 1 -->
@@ -229,8 +217,7 @@ $prices = [3, 2, 2, 5, 8];
                 ?>
             </div>
         </section>
-    </div>
-    <div class="copyright">© Guillaume Belleuvre, 2023 - DWWM</div>
-</body>
+<?php
+include 'include/_footer.php';
 
-</html>
+?>

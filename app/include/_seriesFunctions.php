@@ -78,10 +78,9 @@ function getShowInformationsFromId(array $dataSeries, int $id): ?array
     // }
     // return null;
 
-    $result = array_filter($dataSeries, fn($s) => $s['id'] === $id);
+    $result = array_filter($dataSeries, fn ($s) => $s['id'] === $id);
 
     if (count($result) !== 1) return null;
 
-    return array_values($result)[0];
+    return current($result);
 }
-

@@ -69,13 +69,19 @@ function generateSeries(array $series): string
  * @param integer $id Show's ID you want the information of.
  * @return array|null Show informations or null if no ID found.
  */
-function getShowInformationsFromId(array $dataSeries, int $id = 1): ?array
+function getShowInformationsFromId(array $dataSeries, int $id): ?array
 {
-    foreach ($dataSeries as $show) {
-        if ($show['id'] === $id) {
-            return $show;
-        }
-    }
-    return null;
+    // foreach ($dataSeries as $show) {
+    //     if ($show['id'] === $id) {
+    //         return $show;
+    //     }
+    // }
+    // return null;
+
+    $result = array_filter($dataSeries, fn($s) => $s['id'] === $id);
+
+    if (count($result) !== 1) return null;
+
+    return array_values($result)[0];
 }
 

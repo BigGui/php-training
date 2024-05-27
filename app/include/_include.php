@@ -212,8 +212,8 @@ function getPlatformsFromSeries(array $seriesData): array
  */
 function generateShow(array $show): string
 {
-    return '<h3 class="series__ttl">' . $show['name'] . '</h3>'
-        . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">';
+    return '<a href="exo5.php?serie=' . $show['id'] . '"><h3 class="series__ttl">' . $show['name'] . '</h3>'
+        . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '"></a>';
 }
 
 

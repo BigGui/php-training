@@ -77,7 +77,12 @@ try {
             <h2 class="exercice-ttl">Question 3</h2>
             <p class="exercice-txt">Ajouter un lien aux séries listées ci-dessus menant à cette page avec en paramètre "serie", l'identifiant de la série</p>
             <div class="exercice-sandbox">
+                <?php
 
+                var_dump($_GET['serie']);
+                var_dump($series[0]['id']);
+
+                ?>
             </div>
         </section>
 

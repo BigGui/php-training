@@ -1,5 +1,5 @@
 <?php
-include "./include/_include.php";
+include "./include/_functions.php";
 $array = [12, 65, 95, 41, 85, 63, 71, 64];
 
 $arrayA = [12, "le", 95, 12, 85, "le", 71, "toi", 95, "la", "patate"];

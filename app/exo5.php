@@ -1,5 +1,7 @@
 <?php
-include "./include/_include.php";
+include "./include/_functions.php";
+include "./include/_seriesFunctions.php";
+
 // Json file
 try {
     $fileContent = file_get_contents("datas/series.json");

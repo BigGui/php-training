@@ -79,9 +79,6 @@ try {
             <div class="exercice-sandbox">
                 <?php
 
-                var_dump($_GET['serie']);
-                var_dump($series[0]['id']);
-
                 ?>
             </div>
         </section>
@@ -93,7 +90,12 @@ try {
             <p class="exercice-txt">Si l'URL de la page appelée comporte l'identifiant d'une série, alors afficher toutes les informations de la série ci-dessous.</p>
             <p class="exercice-txt">Si l'identifiant ne correspond à aucune série, afficher un message d'erreur.</p>
             <div class="exercice-sandbox">
+                <?php
+                if (isset($_GET['serie'])){
+                    var_dump(getShowInformationsFromId($series, intval($_GET['serie'])));
+                }
 
+                ?>
             </div>
         </section>
 

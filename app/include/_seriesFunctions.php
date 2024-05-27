@@ -54,3 +54,21 @@ function generateSeries(array $series): string
         'series__itm'
     );
 }
+
+/**
+ * Get show informations from its ID.
+ *
+ * @param array $dataSeries The array containing series data.
+ * @param integer $id Show's ID you want the information of.
+ * @return array|null Show informations or null if no ID found.
+ */
+function getShowInformationsFromId(array $dataSeries, int $id = 1): ?array
+{
+    foreach ($dataSeries as $show) {
+        if ($show['id'] === $id) {
+            return $show;
+        }
+    }
+    return null;
+}
+

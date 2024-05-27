@@ -63,12 +63,10 @@ try {
             <p class="exercice-txt">Afficher la liste de toutes les séries avec l'image principale et son titre</p>
             <p class="exercice-txt">Afficher une seule série par ligne sur les plus petits écrans, 2 séries par ligne sur les écrans intermédiaires et 4 séries par ligne sur un écran d'ordinateur.</p>
             <div class="exercice-sandbox">
-                <ul class="series">
-                    <?php
-                    echo generateSeries($series);
+                <?php
+                echo generateSeries($series);
 
-                    ?>
-                </ul>
+                ?>
             </div>
         </section>
 

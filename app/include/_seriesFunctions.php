@@ -122,3 +122,21 @@ function generateSelectedShow(array $series): string
     // Return HTML code to display the selected show.
     return  generateShow($seriesData, true);
 }
+
+/**
+ * Get the list of all styles in the given array
+ * @param array $series The array with all series data
+ * @return array All the styles in alphabetic order
+ */
+function getStylesList(array $series): array
+{
+    // $styles = [];
+    // foreach ($series as $show) {
+    //     //array_push($styles, ...$show['styles'] );
+    //     $styles = array_merge($styles, $show['styles']);
+    // }
+    $styles = array_merge(...array_column($series, 'styles'));
+    $styles = excludeDuplicates($styles);
+    sort($styles);
+    return $styles;
+}

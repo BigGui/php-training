@@ -99,7 +99,10 @@ try {
             <h2 class="exercice-ttl">Question 5</h2>
             <p class="exercice-txt">Récupérer dans un tableau l'ensemble des styles de séries dans une liste HTML. Afficher les par ordre alphabétique dans une liste HTML.</p>
             <div class="exercice-sandbox">
-
+            <?php
+                
+                echo getArrayAsHTMLList(getStylesList($series));
+            ?>
             </div>
         </section>
 

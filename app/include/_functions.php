@@ -182,3 +182,23 @@ function getFirstElements(array $array, int $nb): array
 
     return $newArray;
 }
+
+
+function getCurrentURL(): string  {
+    return basename($_SERVER['SCRIPT_NAME']);
+}
+
+function generateNavLink(array $page): string
+{
+    return  '<a href="' . $page['url'] . '" class="main-nav-link' . (getCurrentURL() === $page['url'] ? ' active' : '') . '">'
+        . $page['nav']
+        . '</a>';
+}
+
+function generateMainNav(array $pages): string
+{
+    return getArrayAsHTMLList(
+        array_map("generateNavLink", $pages),
+        'main-nav-list'
+    );
+}

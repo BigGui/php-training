@@ -1,3 +1,9 @@
+<?php
+include 'include/_functions.php';
+include 'include/_config.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,14 +20,11 @@
         <header class="header">
             <h1 class="main-ttl">Introduction PHP - Exo 1</h1>
             <nav class="main-nav">
-                <ul class="main-nav-list">
-                    <li><a href="index.php" class="main-nav-link active">Entrainement</a></li>
-                    <li><a href="exo2.php" class="main-nav-link">Donnez moi des fruits</a></li>
-                    <li><a href="exo3.php" class="main-nav-link">Donnez moi de la thune</a></li>
-                    <li><a href="exo4.php" class="main-nav-link">Donnez moi des fonctions</a></li>
-                    <li><a href="exo5.php" class="main-nav-link">Netflix</a></li>
-                    <li><a href="exo6.php" class="main-nav-link">Mini-site</a></li>
-                </ul>
+
+                <?php
+
+                echo generateMainNav($pages);
+                ?>
             </nav>
         </header>
 
@@ -347,13 +350,13 @@
             <p class="exercice-txt">Afficher le prénom et l'âge du joueur le plus jeune dans une phrase dans une balise HTML P.</p>
             <div class="exercice-sandbox">
                 <?php
-                    foreach ($players as $player) {
-                        if(!isset($currentAge) || $player["age"] < $currentAge) {
-                            $currentAge = $player["age"];
-                            $currentName = $player["name"];
-                        }
+                foreach ($players as $player) {
+                    if (!isset($currentAge) || $player["age"] < $currentAge) {
+                        $currentAge = $player["age"];
+                        $currentName = $player["name"];
                     }
-                    echo '<p>Le joueur le plus jeune est : ' . $currentName . ' il a : ' . $currentAge . ' ans.</p>';
+                }
+                echo '<p>Le joueur le plus jeune est : ' . $currentName . ' il a : ' . $currentAge . ' ans.</p>';
                 ?>
             </div>
         </section>

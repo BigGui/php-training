@@ -1,3 +1,8 @@
+:root {
+    --warning-color: #ffa500;
+    --error-color: #ff0000;
+}
+
 .series {
     display: grid;
     grid-template-columns: 1fr;
@@ -26,4 +31,22 @@
     .series {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+/* Errors and warning notifictions */
+
+.warning, .error {
+    font-weight: bold;
+    font-size: .8rem;
+    padding: 1rem;
+    border-width: 1px;
+    border-style: solid;
+}
+.warning {
+    color: var(--warning-color);
+    border-color: var(--warning-color);
+}
+.error {
+    color: var(--error-color);
+    border-color: var(--error-color);
 }

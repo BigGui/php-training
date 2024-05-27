@@ -90,7 +90,7 @@ try {
             <p class="exercice-txt">Si l'URL de la page appelée comporte l'identifiant d'une série, alors afficher toutes les informations de la série ci-dessous.</p>
             <p class="exercice-txt">Si l'identifiant ne correspond à aucune série, afficher un message d'erreur.</p>
             <div class="exercice-sandbox">
-                <?=generateSelectedSerie($series)?>
+                <?=generateSelectedShow($series)?>
             </div>
         </section>
 

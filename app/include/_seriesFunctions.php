@@ -91,11 +91,11 @@ function getShowInformationsFromId(array $dataSeries, int $id): ?array
  * @param array $series The array with all series data
  * @return string
  */
-function generateSelectedSerie(array $series): string
+function generateSelectedShow(array $series): string
 {
     // Is there a selected show?
     if (!isset($_GET['serie'])) {
-        return '<p>Aucune série sélectionnée.</p>';
+        return '<p class="warning">Aucune série sélectionnée.</p>';
     }
 
     // Get show informations from the selected id in the URL
@@ -103,7 +103,7 @@ function generateSelectedSerie(array $series): string
 
     // There is no match
     if (is_null($seriesData)) {
-        return '<p>La série sélectionnée n\'existe pas.</p>';
+        return '<p class="error">La série sélectionnée n\'existe pas.</p>';
     }
 
     // Return HTML code to display the selected show.

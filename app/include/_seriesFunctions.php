@@ -37,9 +37,18 @@ function generateShow(array $show, bool $full = false): string
     if ($full) {
         return '<h3 class="series__ttl">' . $show['name'] . '</h3>'
             . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'
+            . '<p>' . $show['country'] . ', ' . $show['launchYear'] . '</p>'
+            . '<p>Disponible sur ' . $show['availableOn'] . '</p>'
+            . '<p>Composée de ' . $show['numberOfEpisods'] . ' épisodes de ' . $show['episodeDurationInMinutes'] . ' minutes en ' . $show['numberOfSeasons'] . ' saisons.</p>'
+            . '<p>' . ($show['ongoing'] ? 'Toujours en cours.' : 'Série terminée') . '</p>'
+            . '<h4>Style</h4>'
+            . getArrayAsHTMLList($show['styles'])
             . '<h4>Acteurs</h4>'
-            . getArrayAsHTMLList($show['actors']);
+            . getArrayAsHTMLList($show['actors'])
+            . '<h4>Equipe de création</h4>'
+            . getArrayAsHTMLList($show['createdBy']);
     }
+
     return '<a href="exo5.php?serie=' . $show['id'] . '#question4">'
         . '<h3 class="series__ttl">' . $show['name'] . '</h3>'
         . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'

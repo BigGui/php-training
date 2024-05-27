@@ -3,6 +3,8 @@
 /**
  * Get from an array a HTML list string
  * @param array $array your array you want in HTML list
+ * @param string $ulClass an optional CSS class to add to UL element
+ * @param string $liClass an optional CSS class to add to LI elements
  * @return string the HTML list
  */
 function getArrayAsHTMLList(array $array, string $ulClass = '', string $liClass = ''): string
@@ -202,9 +204,12 @@ function getPlatformsFromSeries(array $seriesData): array
 }
 
 
-
-
-
+/**
+ * Generate and return HTML code to display the show with the details in parameter.
+ *
+ * @param array $show An array containing show details
+ * @return string HTML code to display the show
+ */
 function generateShow(array $show): string
 {
     return '<h3 class="series__ttl">' . $show['name'] . '</h3>'
@@ -212,6 +217,17 @@ function generateShow(array $show): string
 }
 
 
-function generateSeries(array $series) :string {
-    return getArrayAsHTMLList(array_map("generateShow", $series), 'series', 'series__itm');
+/**
+ * Generate and return HTML code to display a series list.
+ *
+ * @param array $series An array that provides a list of series with all their details
+ * @return string HTML code to display the list of series
+ */
+function generateSeries(array $series): string
+{
+    return getArrayAsHTMLList(
+        array_map("generateShow", $series),
+        'series',
+        'series__itm'
+    );
 }

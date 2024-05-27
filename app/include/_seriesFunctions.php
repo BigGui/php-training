@@ -35,18 +35,22 @@ function getPlatformsFromSeries(array $seriesData): array
 function generateShow(array $show, bool $full = false): string
 {
     if ($full) {
-        return '<h3 class="series__ttl">' . $show['name'] . '</h3>'
-            . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'
+        return '<div class="show">'
+            . '<h3 class="show__ttl">' . $show['name'] . '</h3>'
+            . '<img class="show__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'
+            . '<div class="show__details">'
             . '<p>' . $show['country'] . ', ' . $show['launchYear'] . '</p>'
             . '<p>Disponible sur ' . $show['availableOn'] . '</p>'
             . '<p>Composée de ' . $show['numberOfEpisods'] . ' épisodes de ' . $show['episodeDurationInMinutes'] . ' minutes en ' . $show['numberOfSeasons'] . ' saisons.</p>'
             . '<p>' . ($show['ongoing'] ? 'Toujours en cours.' : 'Série terminée') . '</p>'
-            . '<h4>Style</h4>'
+            . '<h4 class="show__sub-ttl">Styles</h4>'
             . getArrayAsHTMLList($show['styles'])
-            . '<h4>Acteurs</h4>'
+            . '<h4 class="show__sub-ttl">Acteurs</h4>'
             . getArrayAsHTMLList($show['actors'])
-            . '<h4>Equipe de création</h4>'
-            . getArrayAsHTMLList($show['createdBy']);
+            . '<h4 class="show__sub-ttl">Equipe de création</h4>'
+            . getArrayAsHTMLList($show['createdBy'])
+            . '</div>'
+            . '</div>';
     }
 
     return '<a href="exo5.php?serie=' . $show['id'] . '#question4">'

@@ -27,25 +27,56 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
 @media screen and (min-width: 1000px) {
     .series {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
+
+.show {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "t t"
+        "i d";
+    gap: 1rem;
+}
+
+.show__ttl {
+    grid-area: t;
+    text-align: center;
+}
+.show__sub-ttl {
+    margin: .5rem 0;
+}
+
+.show__img {
+    grid-area: i;
+    width: 100%;
+}
+
+.show__details {
+    grid-area: d;
+}
+
 /* Errors and warning notifictions */
 
-.warning, .error {
+.warning,
+.error {
     font-weight: bold;
     font-size: .8rem;
     padding: 1rem;
     border-width: 1px;
     border-style: solid;
 }
+
 .warning {
     color: var(--warning-color);
     border-color: var(--warning-color);
 }
+
 .error {
     color: var(--error-color);
     border-color: var(--error-color);

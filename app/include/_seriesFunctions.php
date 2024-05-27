@@ -84,3 +84,28 @@ function getShowInformationsFromId(array $dataSeries, int $id): ?array
 
     return current($result);
 }
+
+/**
+ * Get HTML code to display the show matching the id in the URL for the parameter 'serie'.
+ *
+ * @param array $series The array with all series data
+ * @return string
+ */
+function generateSelectedSerie(array $series): string
+{
+    // Is there a selected show?
+    if (!isset($_GET['serie'])) {
+        return '<p>Aucune série sélectionnée.</p>';
+    }
+
+    // Get show informations from the selected id in the URL
+    $seriesData = getShowInformationsFromId($series, $_GET['serie']);
+
+    // There is no match
+    if (is_null($seriesData)) {
+        return '<p>La série sélectionnée n\'existe pas.</p>';
+    }
+
+    // Return HTML code to display the selected show.
+    return  generateShow($seriesData, true);
+}

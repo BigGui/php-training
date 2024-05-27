@@ -29,10 +29,17 @@ function getPlatformsFromSeries(array $seriesData): array
  * Generate and return HTML code to display the show with the details in parameter.
  *
  * @param array $show An array containing show details
+ * @param bool $full Display all show details if true, default false
  * @return string HTML code to display the show
  */
-function generateShow(array $show): string
+function generateShow(array $show, bool $full = false): string
 {
+    if ($full) {
+        return '<h3 class="series__ttl">' . $show['name'] . '</h3>'
+            . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'
+            . '<h4>Acteurs</h4>'
+            . getArrayAsHTMLList($show['actors']);
+    }
     return '<a href="exo5.php?serie=' . $show['id'] . '#question4">'
         . '<h3 class="series__ttl">' . $show['name'] . '</h3>'
         . '<img class="series__img" src="' . $show['image'] . '" alt="' . $show['name'] . '">'

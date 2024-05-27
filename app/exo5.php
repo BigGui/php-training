@@ -91,8 +91,17 @@ try {
             <p class="exercice-txt">Si l'identifiant ne correspond à aucune série, afficher un message d'erreur.</p>
             <div class="exercice-sandbox">
                 <?php
-                if (isset($_GET['serie'])){
-                    var_dump(getShowInformationsFromId($series, intval($_GET['serie'])));
+
+                if (isset($_GET['serie'])) {
+                    $seriesData = getShowInformationsFromId($series, $_GET['serie']);
+
+                    if (is_null($seriesData)) {
+                        echo '<p>La série sélectionnée n\'existe pas.</p>';
+                    } else {
+                        echo generateShow($seriesData, true);
+                    }
+                } else {
+                    echo '<p>Aucune série sélectionnée.</p>';
                 }
 
                 ?>

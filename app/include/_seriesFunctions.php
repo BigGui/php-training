@@ -75,6 +75,31 @@ function generateSeries(array $series): string
     );
 }
 
+
+/**
+ * Generate HTML to display all series filtered by the parameter 'style' in the URL.
+ * Get all series if no filter has been activated.
+ *
+ * @param array $series An array that provides a list of series with all their details.
+ * @return string HTML code to display the series.
+ */
+function generateFilteredSeries(array $series): string
+{
+    if (!isset($_GET['style'])) {
+        return generateSeries($series);
+    }
+
+    // $filteredSeries = [];
+    // foreach ($series as $show) {
+    //     if(in_array($_GET['style'], $show['styles'])) {
+    //         $filteredSeries[] = $show;
+    //     }
+    // }
+
+    return generateSeries(array_filter($series, fn ($s) => in_array($_GET['style'], $s['styles'])));
+}
+
+
 /**
  * Get show informations from its ID.
  *
@@ -157,7 +182,7 @@ function countStyles(array $series): array
  */
 function generateStyleLink(string $style, int $nb): string
 {
-    return '<a class="styles__lnk'. (isset($_GET['style']) && $_GET['style'] === $style ? ' styles__lnk--active' : '').'" href="?style=' . urlencode($style) . '">' . $style . ' (' . $nb . ')</a>';
+    return '<a class="styles__lnk' . (isset($_GET['style']) && $_GET['style'] === $style ? ' styles__lnk--active' : '') . '" href="?style=' . urlencode($style) . '">' . $style . ' (' . $nb . ')</a>';
 }
 
 

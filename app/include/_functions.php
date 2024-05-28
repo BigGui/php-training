@@ -183,12 +183,22 @@ function getFirstElements(array $array, int $nb): array
     return $newArray;
 }
 
-
+/**
+ * Get current page file name.
+ *
+ * @return string The current page file name
+ */
 function getCurrentURL(): string
 {
     return basename($_SERVER['SCRIPT_NAME']);
 }
 
+/**
+ * Generate a link for the main navigation menu, based on page data.
+ *
+ * @param array $page Data related to the page to link to.
+ * @return string HTML code to display the link.
+ */
 function generateNavLink(array $page): string
 {
     return  '<a href="' . $page['url'] . '" class="main-nav-link' . (getCurrentURL() === $page['url'] ? ' active' : '') . '">'
@@ -196,6 +206,12 @@ function generateNavLink(array $page): string
         . '</a>';
 }
 
+/**
+ * Generate HTML code to display the main navigation menu.
+ *
+ * @param array $pages All pages data.
+ * @return string HTML code to display the navigation
+ */
 function generateMainNav(array $pages): string
 {
     return getArrayAsHTMLList(
@@ -204,6 +220,12 @@ function generateMainNav(array $pages): string
     );
 }
 
+/**
+ * Get all detail of the current page.
+ *
+ * @param array $pages All pages data.
+ * @return array|null Data related to the current page. Return null if the page doesn't exist in given data.
+ */
 function getCurrentPageDetails(array $pages): ?array
 {
     foreach ($pages as $page) {
@@ -215,6 +237,12 @@ function getCurrentPageDetails(array $pages): ?array
     return null;
 }
 
+/**
+ * Generate HTML code to associate a page to a list of stylesheet.
+ *
+ * @param array $cssFiles A list of stylesheets
+ * @return string HTML code to associate a page to the stylesheets
+ */
 function linkCssFiles(array $cssFiles): string {
     return implode(array_map(fn($f) => '<link rel="stylesheet" href="'.$f.'">', $cssFiles));
 }
